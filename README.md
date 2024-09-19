@@ -1,2 +1,4 @@
-# fundametals-of-web-performance
-Training website for Frontend Masters course "Fundamentals of Web Performance"
+# Fundamentals of Web Performance Workshop
+
+Example website teaching web performance concepts.
+

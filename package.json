@@ -1,0 +1,25 @@
+{
+  "name": "fundamentals-of-web-performance",
+  "version": "1.0.0",
+  "description": "Example website for the \"Fundamentals of Web Performance\" workshop.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toddhgardner/fundametals-of-web-performance.git"
+  },
+  "keywords": [
+    "web-performance",
+    "core-web-vitals",
+    "example",
+    "workshop"
+  ],
+  "author": "Todd H. Gardner <todd@trackjs.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/toddhgardner/fundametals-of-web-performance/issues"
+  },
+  "homepage": "https://github.com/toddhgardner/fundametals-of-web-performance#readme"
+}
