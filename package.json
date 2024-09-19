@@ -4,7 +4,7 @@
   "description": "Example website for the \"Fundamentals of Web Performance\" workshop.",
   "main": "index.js",
   "scripts": {
-    "start": "node ./index.js",
+    "start": "nodemon ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -14,8 +14,8 @@
   "keywords": [
     "web-performance",
     "core-web-vitals",
-    "example",
-    "workshop"
+    "workshop",
+    "frontend-masters"
   ],
   "author": "Todd H. Gardner <todd@trackjs.com>",
   "license": "MIT",
@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/toddhgardner/fundametals-of-web-performance#readme",
   "dependencies": {
-    "express": "^5.0.0"
+    "express": "^5.0.0",
+    "nodemon": "^3.1.6"
   }
 }
