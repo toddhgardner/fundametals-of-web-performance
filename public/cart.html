@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart - Dev Stickers Store</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>Dev Stickers Store</h1>
+    <div id="cart">
+      <a href="/cart.html">🛒 Cart (<span id="cart-count">0</span>)</a>
+    </div>
+  </header>
+
+  <main>
+    <h2>Your Cart</h2>
+    <div id="cart-items">
+      <!-- Cart items will be dynamically inserted here -->
+    </div>
+    <p id="empty-cart-message">Your cart is empty.</p>
+    <button id="clear-cart">Clear Cart</button>
+  </main>
+
+  <script src="/assets/js/scripts.js"></script>
+  <script>
+    // Display cart items from localStorage
+    function displayCartItems() {
+      const cartItems = JSON.parse(localStorage.getItem('cart')) || {};
+      const cartItemsContainer = document.getElementById('cart-items');
+      cartItemsContainer.innerHTML = '';
+
+      if (Object.keys(cartItems).length === 0) {
+        document.getElementById('empty-cart-message').style.display = 'block';
+        return;
+      }
+
+      document.getElementById('empty-cart-message').style.display = 'none';
+
+      for (const [productId, quantity] of Object.entries(cartItems)) {
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('cart-item');
+        itemDiv.textContent = `Product ID: ${productId} - Quantity: ${quantity}`;
+        cartItemsContainer.appendChild(itemDiv);
+      }
+    }
+
+    // Clear cart function
+    document.getElementById('clear-cart').addEventListener('click', () => {
+      localStorage.removeItem('cart');
+      updateCartCount();
+      displayCartItems();
+    });
+
+    // Initialize cart display
+    document.addEventListener('DOMContentLoaded', () => {
+      updateCartCount();
+      displayCartItems();
+    });
+  </script>
+</body>
+
+</html>

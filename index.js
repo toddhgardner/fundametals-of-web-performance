@@ -10,7 +10,9 @@ const app = express();
 /**
  * Host static assets in the ./public directory
  */
-app.use(express.static(resolve(__dirname, "public")));
+app.use(express.static(resolve(__dirname, "public"), {
+  extensions: ["html"]
+}));
 
 /**
  * Start the application

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sticker 1 - Dev Stickers Store</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>Dev Stickers Store</h1>
+    <div id="cart">
+      🛒 Cart (<span id="cart-count">0</span>)
+    </div>
+  </header>
+
+  <main>
+    <div class="product-detail">
+      <img src="/assets/img/fast-sloth-sticker.png" alt="Fast Sloth Sticker">
+      <div class="product-info">
+        <h2>Fast Sloth Sticker</h2>
+        <p>Description for Sticker 1. Perfect for developers!</p>
+        <button id="add-to-cart" data-product-id="1">Add to Cart</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="/assets/js/scripts.js"></script>
+  <script>
+    // Add to Cart functionality for this specific product
+    document.getElementById('add-to-cart').addEventListener('click', () => {
+      addToCart('1');
+    });
+  </script>
+</body>
+
+</html>
