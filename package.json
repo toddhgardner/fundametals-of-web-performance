@@ -24,9 +24,17 @@
   },
   "homepage": "https://github.com/toddhgardner/fundametals-of-web-performance#readme",
   "dependencies": {
+    "better-sqlite3": "^11.3.0",
+    "body-parser": "^2.0.1",
     "compression": "^1.7.4",
+    "cors": "^2.8.5",
     "express": "^5.0.0",
     "http-compression": "^1.0.20",
     "nodemon": "^3.1.6"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "**/public/**"
+    ]
   }
 }

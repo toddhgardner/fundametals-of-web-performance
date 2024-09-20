@@ -1,0 +1,18 @@
+PRAGMA foreign_keys = ON;
+
+CREATE TABLE IF NOT EXISTS
+  users (
+    userId INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    createdOn TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  );
+
+CREATE TABLE IF NOT EXISTS
+  cartItems (
+    cartItemId INTEGER PRIMARY KEY AUTOINCREMENT,
+    userId INTEGER NOT NULL,
+    productId TEXT NOT NULL,
+    productTitle TEXT NOT NULL,
+    FOREIGN KEY (userId)
+      REFERENCES users (userId)
+  );

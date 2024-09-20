@@ -4,63 +4,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Cart - Dev Stickers Store</title>
+  <title>Your Cart - Developer Stickers Online</title>
+  <script src="/assets/js/scripts.js"></script>
   <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 
 <body>
   <header>
-    <h1>Dev Stickers Store</h1>
-    <div id="cart">
-      <a href="/cart.html">🛒 Cart (<span id="cart-count">0</span>)</a>
+    <div class="container flex-row align-center space-between">
+      <h1>
+        <a href="/" class="flex-column">
+          <span>Developer Stickers</span>
+          <em>Online</em>
+        </a>
+      </h1>
+      <div class="cart">
+        <a href="/cart" class="flex align-center">Cart<span id="cart-count">0</span></a>
+      </div>
     </div>
   </header>
 
-  <main>
-    <h2>Your Cart</h2>
-    <div id="cart-items">
-      <!-- Cart items will be dynamically inserted here -->
+  <main class="container">
+    <div class="flex align-center space-between mb-20">
+      <h2>Your Cart</h2>
+      <button class="clear-cart">Clear Cart</button>
     </div>
-    <p id="empty-cart-message">Your cart is empty.</p>
-    <button id="clear-cart">Clear Cart</button>
+
+    <ul id="cart-items" class="product-list flex-column flex-gap mb-20">
+      <!-- Cart items will be dynamically inserted here -->
+    </ul>
+
+    <div class="flex-column align-center">
+      <button type="button" class="btn-primary btn-big" onclick="alert('Not Implemented')">Check out</button>
+    </div>
   </main>
 
-  <script src="/assets/js/scripts.js"></script>
-  <script>
-    // Display cart items from localStorage
-    function displayCartItems() {
-      const cartItems = JSON.parse(localStorage.getItem('cart')) || {};
-      const cartItemsContainer = document.getElementById('cart-items');
-      cartItemsContainer.innerHTML = '';
-
-      if (Object.keys(cartItems).length === 0) {
-        document.getElementById('empty-cart-message').style.display = 'block';
-        return;
-      }
-
-      document.getElementById('empty-cart-message').style.display = 'none';
-
-      for (const [productId, quantity] of Object.entries(cartItems)) {
-        const itemDiv = document.createElement('div');
-        itemDiv.classList.add('cart-item');
-        itemDiv.textContent = `Product ID: ${productId} - Quantity: ${quantity}`;
-        cartItemsContainer.appendChild(itemDiv);
-      }
-    }
-
-    // Clear cart function
-    document.getElementById('clear-cart').addEventListener('click', () => {
-      localStorage.removeItem('cart');
-      updateCartCount();
-      displayCartItems();
-    });
-
-    // Initialize cart display
-    document.addEventListener('DOMContentLoaded', () => {
-      updateCartCount();
-      displayCartItems();
-    });
-  </script>
+  <footer>
+    <div class="container align-center justify-center">
+      <p>
+        Example online store website for the <a href="https://frontendmasters.com/courses/web-perf/">Fundamentals of
+          Web Performance</a>
+        workshop by <a href="https://toddhgardner.com/">Todd H. Gardner</a>.
+      </p>
+      <p>
+        Not intended for production use.
+      </p>
+    </div>
+  </footer>
 </body>
 
 </html>

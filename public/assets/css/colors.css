@@ -1,66 +1,34 @@
 /* Dark Theme Color Palette for Dev Stickers Store */
-
+/* https://colorffy.com/dark-theme-generator */
 /* Background and Surface */
 :root {
-  --background-color: #0d1117;       /* Dark background with a cooler hue */
-  --surface-color: #161b22;          /* Slightly lighter surface (e.g., cards) */
-  --border-color: #2c313c;           /* Border color with a subtle cool tint */
-  --hover-surface-color: #1e252d;    /* Hover effect for buttons/cards */
+  /** CSS DARK THEME PRIMARY COLORS */
+  --color-primary-100: #00bcd4;
+  --color-primary-200: #47c4d9;
+  --color-primary-300: #67cbde;
+  --color-primary-400: #81d3e2;
+  --color-primary-500: #99dae7;
+  --color-primary-600: #afe2ec;
+  /** CSS DARK THEME SURFACE COLORS */
+  --color-surface-100: #121212;
+  --color-surface-200: #282828;
+  --color-surface-300: #3f3f3f;
+  --color-surface-400: #575757;
+  --color-surface-500: #717171;
+  --color-surface-600: #8b8b8b;
+  /** CSS DARK THEME MIXED SURFACE COLORS */
+  --color-surface-mixed-100: #192122;
+  --color-surface-mixed-200: #2e3637;
+  --color-surface-mixed-300: #454c4c;
+  --color-surface-mixed-400: #5d6363;
+  --color-surface-mixed-500: #767b7b;
+  --color-surface-mixed-600: #8f9494;
 
-  /* Text Colors */
-  --text-primary: #d1d5db;           /* Primary text color (cool light grey) */
-  --text-secondary: #9ca3af;         /* Secondary text color (darker cool grey) */
-  --text-accent: #ffffff;            /* High-contrast text (white) for certain elements */
-
-  /* Accent Colors */
-  --primary-accent: #2ecc71;         /* Primary accent (green for buttons/links) */
-  --secondary-accent: #3498db;       /* Secondary accent (cool blue for highlights) */
-  --highlight-color: #5dade2;        /* Highlight color for emphasized elements (e.g., product names) */
-
-  /* Alerts & Feedback */
-  --error-color: #e74c3c;            /* Error color (for invalid actions, a cool red) */
-  --success-color: #27ae60;          /* Success color (a green shade) */
-
-  /* Cart & Button Colors */
-  --cart-color: #f1c40f;             /* Cart icon/button color (cool yellow) */
+  /** APPLIED COLORS */
+  --color-background: var(--color-surface-100);
+  --color-surface: var(--color-surface-mixed-300);
+  --color-text: white;
+  --color-border: var(--color-surface-mixed-400);
+  --color-primary: var(--color-primary-400);
+  --color-error: red;
 }
-
-/* Dark Theme Colors Usage Example */
-body {
-  background-color: var(--background-color);
-  color: var(--text-primary);
-}
-
-header {
-  background-color: var(--surface-color);
-  color: var(--text-accent);
-}
-
-.product-card {
-  background-color: var(--surface-color);
-  border: 1px solid var(--border-color);
-}
-
-.product-card h2 {
-  color: var(--highlight-color);
-}
-
-button.add-to-cart {
-  background-color: var(--primary-accent);
-  color: var(--text-accent);
-}
-
-button.add-to-cart:hover {
-  background-color: var(--hover-surface-color);
-}
-
-#cart {
-  color: var(--cart-color);
-}
-
-#cart a {
-  color: var(--cart-color);
-}
-
-#clear-cart {
-  background-color:

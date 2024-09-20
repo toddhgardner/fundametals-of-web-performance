@@ -11,47 +11,86 @@
 
 <body>
   <header>
-    <h1>Developer Stickers <em>Online</em></h1>
-    <div id="cart">
-      <a href="/cart">🛒 Cart (<span id="cart-count">0</span>)</a>
+    <div class="container flex-row align-center space-between">
+      <h1>
+        <a href="/" class="flex-column">
+          <span>Developer Stickers</span>
+          <em>Online</em>
+        </a>
+      </h1>
+      <div class="cart">
+        <a href="/cart" class="flex align-center">Cart<span id="cart-count">0</span></a>
+      </div>
     </div>
   </header>
 
-  <main>
+  <main class="container">
+    <h2 class="mb-20">Featured Products</h2>
     <div class="product-grid">
+
       <div class="product-card">
-        <a href="/products/fast-sloth-sticker">
+        <a href="/products/fast-sloth-sticker" class="mb-20">
           <img src="/assets/img/fast-sloth-sticker.png" alt="Fast Sloth Sticker">
           <h2>Fast Sloth Sticker</h2>
+          <p>
+            Get your hands on this awesome Request Metrics sloth sticker, featuring our chill mascot riding a
+            rocket—perfect for your laptop or desk!
+          </p>
         </a>
-        <button class="add-to-cart" data-product-id="fast-sloth-sticker">Add to Cart</button>
+        <button type="button" class="add-to-cart btn-primary" data-product-id="fast-sloth-sticker"
+          data-product-title="Fast Sloth Sticker">Add to Cart</button>
       </div>
+
       <div class="product-card">
-        <a href="/products/good-day-to-debug-sticker">
+        <a href="/products/good-day-to-debug-sticker" class="mb-20">
           <img src="/assets/img/good-day-to-debug-sticker.png" alt="Good Day to Debug Sticker">
           <h2>Good Day to Debug Sticker</h2>
+          <p>
+            Channel your inner warrior with this epic Request Metrics sticker. Debug with honor.
+          </p>
         </a>
-        <button class="add-to-cart" data-product-id="good-day-to-debug-sticker">Add to Cart</button>
+        <button type="button" class="add-to-cart btn-primary" data-product-id="good-day-to-debug-sticker"
+          data-product-title="Good Day to Debug Sticker">Add to Cart</button>
       </div>
+
       <div class="product-card">
-        <a href="/products/js-happens-sticker">
-          <img src="/assets/img/js-happens-sticker.png" alt="JavaScript Happens Sticker">
-          <h2>JavaScript Happens Sticker</h2>
+        <a href="/products/js-happens-sticker" class="mb-20">
+          <img src="/assets/img/js-happens-sticker.png" alt="JavaScript Happens">
+          <h2>JavaScript Happens</h2>
+          <p>
+            Embrace the inevitable. You can't stop it. JavaScript will happen.
+          </p>
         </a>
-        <button class="add-to-cart" data-product-id="js-happens-sticker">Add to Cart</button>
+        <button type="button" class="add-to-cart btn-primary" data-product-id="js-happens-sticker"
+          data-product-title="JavaScript Happens">Add to Cart</button>
       </div>
+
       <div class="product-card">
-        <a href="/products/yo-dawg-sticker">
+        <a href="/products/yo-dawg-sticker" class="mb-20">
           <img src="/assets/img/yo-dawg-sticker.png" alt="Yo Dawg Sticker">
           <h2>Yo Dawg Sticker</h2>
+          <p>
+            Develop JavaScript like Xzibit. You always need more JavaScript.
+          </p>
         </a>
-        <button class="add-to-cart" data-product-id="yo-dawg-sticker">Add to Cart</button>
+        <button type="button" class="add-to-cart btn-primary" data-product-id="yo-dawg-sticker"
+          data-product-title="Yo Dawg Sticker">Add to Cart</button>
       </div>
+
     </div>
   </main>
 
   <footer>
-
+    <div class="container align-center justify-center">
+      <p>
+        Example online store website for the <a href="https://frontendmasters.com/courses/web-perf/">Fundamentals of
+          Web Performance</a>
+        workshop by <a href="https://toddhgardner.com/">Todd H. Gardner</a>.
+      </p>
+      <p>
+        Not intended for production use.
+      </p>
+    </div>
   </footer>
 </body>
 
