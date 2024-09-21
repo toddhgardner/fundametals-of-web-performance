@@ -12,19 +12,22 @@
 <body>
   <header>
     <div class="container flex-row align-center space-between">
-      <h1>
-        <a href="/" class="flex-column">
+      <a href="/" class="site-logo flex align-center flex-gap-10">
+        <div class="site-icon">
+          <img src="/assets/img/devstickers-logo.png" alt="Developer Stickers Online" />
+        </div>
+        <h1 class="flex-column">
           <span>Developer Stickers</span>
           <em>Online</em>
-        </a>
-      </h1>
+        </h1>
+      </a>
       <div class="cart">
         <a href="/cart" class="flex align-center">Cart<span id="cart-count">0</span></a>
       </div>
     </div>
   </header>
 
-  <main class="container">
+  <main class="container cart">
     <div class="flex align-center space-between mb-20">
       <h2>Your Cart</h2>
       <button class="clear-cart">Clear Cart</button>

@@ -15,6 +15,15 @@ const performanceConfig = require("./performance-config");
 const webServer = express();
 
 /**
+ * Simulating real-world delays for server processing duration and network
+ * latency.
+ */
+webServer.use((req, res, next) => {
+  const totalDelay = performanceConfig.serverDuration + performanceConfig.latency;
+  setTimeout(next, totalDelay);
+});
+
+/**
  * Compression of response bodies.
  * @see https://www.npmjs.com/package/http-compression
  */
@@ -24,6 +33,9 @@ webServer.use(compression({
   brotli: performanceConfig.useBrotliCompression
 }));
 
+/**
+ * Host the API on the first-party origin
+ */
 webServer.use("/api", api);
 
 /**
@@ -47,4 +59,3 @@ webServer.use(express.static(resolve(__dirname, "..", "public"), {
 }));
 
 module.exports = webServer;
-

@@ -12,12 +12,26 @@ module.exports = {
    * Whether to use basic GZip Compression on response bodies, when supported by
    * the requesting browser.
    */
-  useGzipCompression: true,
+  useGzipCompression: false,
 
   /**
    * Whether to use the new Brotli Compression on response bodies, when supported
    * by the requesting browser.
    */
-  useBrotliCompression: true
+  useBrotliCompression: false,
+
+  /**
+   * The expected processing time in milliseconds of a "real" server under load
+   * that has to talk to external systems.
+   */
+  serverDuration: 100,
+
+  /**
+   * The network latency in milliseconds to simulate on requests. This is based
+   * on how far your users are from your services.
+   * @see https://wondernetwork.com/pings
+   */
+  latency: 105,
+
 
 };

@@ -1,4 +1,6 @@
+@import "./colors.css";
 @import "./normalize.css";
+@import "./typography.css";
 
 * {
   box-sizing: border-box;
@@ -7,7 +9,6 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
   background-color: var(--color-background);
   color: var(--color-text);
   min-height: 100vh;
@@ -31,8 +32,6 @@ button {
   line-height: 1.5em;
   font-weight: bold;
   transition: filter 200ms ease-in-out;
-
-
 
   &:active, &:focus, &:hover {
     filter: brightness(130%);
@@ -81,6 +80,9 @@ button {
 
 .flex-gap {
   gap: 20px;
+}
+.flex-gap-10 {
+  gap: 10px;
 }
 
 .align-center {
