@@ -1,9 +1,11 @@
-import { onFCP, onTTFB, onLCP } from 'https://unpkg.com/web-vitals@4/dist/web-vitals.attribution.js?module';
+import { onFCP, onTTFB, onLCP, onCLS, onINP } from 'https://unpkg.com/web-vitals@4/dist/web-vitals.attribution.js?module';
 
 window.addEventListener("DOMContentLoaded", async () => {
   onFCP(logSummaryInfo);
   onTTFB(logSummaryInfo);
   onLCP(logSummaryInfo);
+  onCLS(logSummaryInfo);
+  onINP(logSummaryInfo);
 });
 
 const LOG_PREFIX = '[FUNDAMENTALS OF WEB PERFORMANCE]';
@@ -64,15 +66,19 @@ async function logSummaryInfo(metric) {
     console.table([{
       'LCP sub-part': 'Time to first byte',
       'Time (ms)': Math.round(metric.attribution.timeToFirstByte, 0),
+      '% Total': Math.round((metric.attribution.timeToFirstByte / metric.value) * 100) + "%"
     }, {
       'LCP sub-part': 'Resource load delay',
       'Time (ms)': Math.round(metric.attribution.resourceLoadDelay, 0),
+      '% Total': Math.round((metric.attribution.resourceLoadDelay / metric.value) * 100) + "%"
     }, {
       'LCP sub-part': 'Resource load duration',
       'Time (ms)': Math.round(metric.attribution.resourceLoadDuration, 0),
+      '% Total': Math.round((metric.attribution.resourceLoadDuration / metric.value) * 100) + "%"
     }, {
       'LCP sub-part': 'Element render delay',
       'Time (ms)': Math.round(metric.attribution.elementRenderDelay, 0),
+      '% Total': Math.round((metric.attribution.elementRenderDelay / metric.value) * 100) + "%"
     }]);
   }
 
@@ -84,9 +90,11 @@ async function logSummaryInfo(metric) {
     console.table([{
       'FCP sub-part': 'Time to first byte',
       'Time (ms)': Math.round(metric.attribution.timeToFirstByte, 0),
+      '% Total': Math.round((metric.attribution.timeToFirstByte / metric.value) * 100) + "%"
     }, {
       'FCP sub-part': 'FCP render delay',
       'Time (ms)': Math.round(metric.attribution.firstByteToFCP, 0),
+      '% Total': Math.round((metric.attribution.firstByteToFCP / metric.value) * 100) + "%"
     }]);
   }
 
@@ -109,14 +117,17 @@ async function logSummaryInfo(metric) {
       console.table([{
         'Interaction sub-part': 'Input delay',
         'Time (ms)': Math.round(metric.attribution.inputDelay, 0),
+        '% Total': Math.round((metric.attribution.inputDelay / metric.value) * 100) + "%"
       },
       {
         'Interaction sub-part': 'Processing duration',
         'Time (ms)': Math.round(metric.attribution.processingDuration, 0),
+        '% Total': Math.round((metric.attribution.processingDuration / metric.value) * 100) + "%"
       },
       {
         'Interaction sub-part': 'Presentation delay',
         'Time (ms)': Math.round(metric.attribution.presentationDelay, 0),
+        '% Total': Math.round((metric.attribution.presentationDelay / metric.value) * 100) + "%"
       }]);
     }
 
@@ -168,18 +179,23 @@ async function logSummaryInfo(metric) {
     console.table([{
       'TTFB sub-part': 'Waiting duration',
       'Time (ms)': Math.round(metric.attribution.waitingDuration, 0),
+      '% Total': Math.round((metric.attribution.waitingDuration / metric.value) * 100) + "%"
     }, {
       'TTFB sub-part': 'Cache duration',
       'Time (ms)': Math.round(metric.attribution.cacheDuration, 0),
+      '% Total': Math.round((metric.attribution.cacheDuration / metric.value) * 100) + "%"
     }, {
       'TTFB sub-part': 'DNS duration',
       'Time (ms)': Math.round(metric.attribution.dnsDuration, 0),
+      '% Total': Math.round((metric.attribution.dnsDuration / metric.value) * 100) + "%"
     }, {
       'TTFB sub-part': 'Connection duration',
       'Time (ms)': Math.round(metric.attribution.connectionDuration, 0),
+      '% Total': Math.round((metric.attribution.connectionDuration / metric.value) * 100) + "%"
     }, {
       'TTFB sub-part': 'Request duration',
       'Time (ms)': Math.round(metric.attribution.requestDuration, 0),
+      '% Total': Math.round((metric.attribution.requestDuration / metric.value) * 100) + "%"
     }]);
   }
 
