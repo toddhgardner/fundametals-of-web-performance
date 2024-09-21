@@ -24,7 +24,7 @@ module.exports = {
    * The expected processing time in milliseconds of a "real" server under load
    * that has to talk to external systems.
    */
-  serverDuration: 400,
+  serverDuration: 1_000,
 
   /**
    * The network latency in milliseconds to simulate on requests. This is based
