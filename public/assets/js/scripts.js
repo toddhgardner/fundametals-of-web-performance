@@ -9,7 +9,7 @@
  * 1.
  */
 
-const API_BASE_URL = "http://devstickers.localhost:3000/api";
+const API_BASE_URL = "/api";
 // const API_BASE_URL = "http://api.devstickers.localhost:3001";
 
 window.addEventListener("DOMContentLoaded", async () => {
