@@ -24,14 +24,14 @@ module.exports = {
    * The expected processing time in milliseconds of a "real" server under load
    * that has to talk to external systems.
    */
-  serverDuration: 100,
+  serverDuration: 0,
 
   /**
    * The network latency in milliseconds to simulate on requests. This is based
    * on how far your users are from your services.
    * @see https://wondernetwork.com/pings
    */
-  latency: 105,
+  latency: 0,
 
 
 };
