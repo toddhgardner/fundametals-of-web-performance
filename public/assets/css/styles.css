@@ -304,3 +304,54 @@ main {
 main.cart {
   margin: 40px auto;
 }
+
+#promo-banner {
+  background-color: var(--color-primary-100);
+}
+.promo-list {
+  margin-bottom: 20px;
+
+  .product-card {
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    padding: 0;
+    a {
+      flex-direction: row;
+      height: 180px;
+      gap: 20px;
+      min-width: 0;
+      img {
+        height: 100%;
+        width: auto;
+      }
+    }
+    &:hover, &:active, &:focus {
+      transform: none;
+      box-shadow: none;
+    }
+    button {
+      margin: 0;
+    }
+
+    /* Hidden by default */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    &.expand {
+      max-height: 1000px;
+      opacity: 1;
+      /* transition: max-height 2s ease-in,
+                  opacity 1s ease-out 1s; */
+
+    }
+  }
+
+  @media (min-width: 720px) {
+    margin-bottom: 0;
+    .product-card {
+      flex-direction: row;
+    }
+  }
+
+}

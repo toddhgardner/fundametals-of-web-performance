@@ -15,8 +15,13 @@
     rel="stylesheet">
 
   <link rel="stylesheet" href="/assets/css/styles.css">
+  <script>
+    const API_BASE_URL = "/api";
+    const STATIC_BASE_URL = "http://localhost:3000";
+  </script>
   <script src="/assets/js/scripts.js"></script>
-  <script src="/assets/js/promo.js"></script>
+
+
   <script src="/assets/js/logging.js" type="module"></script>
 </head>
 
@@ -40,12 +45,8 @@
 
   <main>
 
-    <section class="promo" style="max-height: 0; overflow: hidden">
-      <img src="/assets/img/fast-sloth-sticker.png?promo" alt="Express Your Developer Personality">
-      <img src="/assets/img/js-happens-sticker.png?promo" alt="Express Your Developer Personality">
-      <img src="/assets/img/good-day-to-debug-sticker.png?promo" alt="Express Your Developer Personality">
-      <img src="/assets/img/yo-dawg-sticker.png?promo" alt="Express Your Developer Personality">
-    </section>
+    <section id="promo-banner"><!-- This is filled in by promo.js --></section>
+    <script src="/assets/js/promo.js"></script>
 
     <section class="hero">
       <div class="illustration">

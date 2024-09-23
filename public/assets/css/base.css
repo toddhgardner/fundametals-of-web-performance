@@ -47,6 +47,11 @@ button {
     color: var(--color-surface-mixed-100);
   }
 
+  &.btn-inverse {
+    background-color: var(--color-surface-100);
+    color: white;
+  }
+
   &[disabled=disabled] {
     background-color: var(--color-surface-600);
     color: var(--color-surface-300);

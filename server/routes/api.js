@@ -11,11 +11,24 @@
  */
 const { Router } = require("express");
 const bodyParser = require("body-parser");
+const { getRandom } = require("../lib/getRandom");
 const cartItems = require("../data/cartItems");
 const users = require("../data/users");
+const productsQuery = require("../data/productsQuery");
 
 const jsonParser = bodyParser.json();
 const apiRouter = new Router();
+
+/**
+ * Product API
+ * RESTful API Endpoints
+ */
+apiRouter.get("/products", async (req, res, next) => {
+  const products = await productsQuery.getAll();
+  products[getRandom(0, (products.length - 1))].isPromo = true;
+  res.json(products);
+  next();
+})
 
 /**
  * RESTful API Endpoints
