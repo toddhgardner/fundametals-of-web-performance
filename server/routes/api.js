@@ -12,8 +12,8 @@
 const { Router } = require("express");
 const bodyParser = require("body-parser");
 const { getRandom } = require("../lib/getRandom");
-const cartItems = require("../data/cartItems");
-const users = require("../data/users");
+const cartQuery = require("../data/cartQuery");
+const usersQuery = require("../data/usersQuery");
 const productsQuery = require("../data/productsQuery");
 
 const jsonParser = bodyParser.json();
@@ -31,58 +31,88 @@ apiRouter.get("/products", async (req, res, next) => {
 })
 
 /**
+ * User API
  * RESTful API Endpoints
- * User Routes
  */
-apiRouter.get("/users/:userId", (req, res, next) => {
+apiRouter.get("/users/:userId", async (req, res, next) => {
   const { userId } = req.params;
-  const user = users.getById({ userId });
+  const user = await usersQuery.getById({ userId });
   if (!user) {
     res.status(404).json({ error: "User not found" });
     return next();
   }
   res.json(user);
+  next();
 });
-apiRouter.post("/users", jsonParser, (req, res, next) => {
+apiRouter.post("/users", jsonParser, async (req, res, next) => {
   const { name } = req.body;
-  const result = users.create({ name });
+  const result = await usersQuery.create({ name });
   res.set("Location", `${req.protocol}://${req.host}${req.originalUrl}/${result.lastInsertRowid}`);
   res.sendStatus(201);
+  next();
 });
 
 /**
+ * Cart API
  * RESTful API Endpoints
- * Cart Routes
  */
-apiRouter.get("/cart/:userId", (req, res, next) => {
+apiRouter.get("/users/:userId/cart", async (req, res, next) => {
   const { userId } = req.params;
-  const user = users.getById({ userId });
+  const user = await usersQuery.getById({ userId });
   if (!user) {
-    return res.status(404).json({ error: "User not found" });
+    res.status(404).json({ error: "User not found" });
+    return next();
   }
-  const data = cartItems.getByUser({ userId });
+  const data = await cartQuery.getByUser({ userId });
   res.json(data);
+  next();
+});
+apiRouter.post("/users/:userId/cart", jsonParser, async (req, res, next) => {
+  const { userId } = req.params;
+  const { productId } = req.body;
+  await cartQuery.insert({ userId, productId });
+  res.status(201);
+  const data = await cartQuery.getByUser({ userId });
+  res.json(data);
+  next();
+});
+apiRouter.delete("/users/:userId/cart", async (req, res, next) => {
+  console.log("here");
+  const { userId } = req.params;
+  await cartQuery.deleteAll({ userId });
+  res.status(200);
+  const data = await cartQuery.getByUser({ userId });
+  res.json(data);
+  next();
+});
+apiRouter.delete("/users/:userId/cart/:cartItemId", async (req, res, next) => {
+  const { userId, cartItemId } = req.params;
+  await cartQuery.delete({ userId, cartItemId });
+  res.status(200);
+  const data = await cartQuery.getByUser({ userId });
+  res.json(data);
+  next();
 });
 
 /**
  * Bespoke API Endpoints that do actions expected by the UI
  */
-apiRouter.post("/cart/:userId", jsonParser, (req, res, next) => {
-  const { userId } = req.params;
-  const { productId, productTitle } = req.body;
-  cartItems.update({ userId, productId, productTitle });
-  res.json(cartItems.getByUser({ userId }));
-});
-apiRouter.delete("/cart/:userId/:cartItemId", (req, res, next) => {
-  const { userId, cartItemId } = req.params;
-  cartItems.delete({ userId, cartItemId });
-  res.json(cartItems.getByUser({ userId }));
-});
-apiRouter.delete("/cart/:userId", (req, res, next) => {
-  const { userId } = req.params;
-  cartItems.deleteAll({ userId });
-  res.json(cartItems.getByUser({ userId }));
-});
+// apiRouter.post("/cart/:userId", jsonParser, (req, res, next) => {
+//   const { userId } = req.params;
+//   const { productId, productTitle } = req.body;
+//   cartItems.update({ userId, productId, productTitle });
+//   res.json(cartItems.getByUser({ userId }));
+// });
+// apiRouter.delete("/cart/:userId/:cartItemId", (req, res, next) => {
+//   const { userId, cartItemId } = req.params;
+//   cartItems.delete({ userId, cartItemId });
+//   res.json(cartItems.getByUser({ userId }));
+// });
+// apiRouter.delete("/cart/:userId", (req, res, next) => {
+//   const { userId } = req.params;
+//   cartItems.deleteAll({ userId });
+//   res.json(cartItems.getByUser({ userId }));
+// });
 
 
 module.exports = apiRouter;

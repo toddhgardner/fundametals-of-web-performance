@@ -11,7 +11,7 @@
  */
 window.addEventListener("DOMContentLoaded", async () => {
 
-  const productsResp = await fetch(`${API_BASE_URL}/products`);
+  const productsResp = await fetch(`${API_BASE_URL}/api/products`);
   const products = await productsResp.json();
 
   const el = document.getElementById("promo-banner");
@@ -28,7 +28,7 @@ window.addEventListener("DOMContentLoaded", async () => {
           </div>
         </a>
         <div class="flex align-center">
-          <button type="button" class="add-to-cart btn-inverse btn-big" data-cart-item-id="${product.cartItemId}">Add to Cart</button>
+          <button type="button" class="add-to-cart btn-inverse btn-big" data-product-id="${product.id}">Add to Cart</button>
         </div>
       </div>`;
   });

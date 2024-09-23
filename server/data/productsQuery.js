@@ -6,7 +6,7 @@ const database = require('./database');
 const TABLE_NAME = "products";
 
 const getAllStatement = database.prepare(`
-  SELECT id, name, description, imagePath
+  SELECT id, slug, name, description, imagePath
   FROM ${TABLE_NAME}`);
 
 module.exports = {
