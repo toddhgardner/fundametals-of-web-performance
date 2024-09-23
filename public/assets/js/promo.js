@@ -9,7 +9,7 @@
  * 2. Downloading resources that are not shown
  * 3. Shifting layouts
  */
-(async () => {
+window.addEventListener("DOMContentLoaded", async () => {
 
   const productsResp = await fetch(`${API_BASE_URL}/products`);
   const products = await productsResp.json();
@@ -42,4 +42,4 @@
   }, 100);
 
 
-})();
+});
