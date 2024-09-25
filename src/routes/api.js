@@ -44,7 +44,7 @@ apiRouter.get("/users/:userId", async (req, res, next) => {
 apiRouter.post("/users", jsonParser, async (req, res, next) => {
   const { name } = req.body;
   const result = await usersQuery.create({ name });
-  res.set("Location", `${req.protocol}://${req.host}${req.originalUrl}/${result.lastInsertRowid}`);
+  res.set("Location", `${req.get("origin")}${req.originalUrl}/${result.lastInsertRowid}`);
   res.sendStatus(201);
   next();
 });
