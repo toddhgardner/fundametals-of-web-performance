@@ -2,15 +2,12 @@
  * API Routes
  * Fundamentals of Web Performance
  *
- * This is an example API that has both RESTful and bespoke endpoints for
- * performing operations. The goal is to demonstrate the performance costs of
- * strict RESTful behavior in causing sequential requests.
- *
- * This can either be mounted as its own server, or as routes for a common
- * webserver to illustrate the difference between domain hosting.
+ * This is an example API for interacting with the Store Data.
  */
+
 const { Router } = require("express");
 const bodyParser = require("body-parser");
+
 const { getRandom } = require("../lib/getRandom");
 const cartQuery = require("../data/cartQuery");
 const usersQuery = require("../data/usersQuery");
@@ -92,26 +89,5 @@ apiRouter.delete("/users/:userId/cart/:cartItemId", async (req, res, next) => {
   res.json(data);
   next();
 });
-
-/**
- * Bespoke API Endpoints that do actions expected by the UI
- */
-// apiRouter.post("/cart/:userId", jsonParser, (req, res, next) => {
-//   const { userId } = req.params;
-//   const { productId, productTitle } = req.body;
-//   cartItems.update({ userId, productId, productTitle });
-//   res.json(cartItems.getByUser({ userId }));
-// });
-// apiRouter.delete("/cart/:userId/:cartItemId", (req, res, next) => {
-//   const { userId, cartItemId } = req.params;
-//   cartItems.delete({ userId, cartItemId });
-//   res.json(cartItems.getByUser({ userId }));
-// });
-// apiRouter.delete("/cart/:userId", (req, res, next) => {
-//   const { userId } = req.params;
-//   cartItems.deleteAll({ userId });
-//   res.json(cartItems.getByUser({ userId }));
-// });
-
 
 module.exports = apiRouter;

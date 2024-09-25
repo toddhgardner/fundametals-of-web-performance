@@ -1,11 +1,18 @@
-const webServer = require("./server/webServer");
-const apiServer = require("./server/apiServer");
+/**
+ * Launcher
+ * Fundamentals of Web Performance
+ *
+ * Thanks for joining the Fundamentals of Web Performance Workshop!
+ *
+ * My goal for this application is to make it a fully-documented example of a
+ * *very* simple web application using basic tools and libraries.
+ *
+ * This is the main launcher, which just spins up the application on our running
+ * port.
+ */
 
-apiServer.listen(3001, () => {
-  console.log("API server is ready at http://api.devstickers.localhost:3001/");
-})
+const app = require("./src/app");
 
-webServer.listen(3000, () => {
-  console.log("Web server is ready at http://devstickers.localhost:3000/");
+app.listen(3000, () => {
+  console.log("Web server is ready at http://localhost:3000/");
 });
-

@@ -20,9 +20,7 @@
     const STATIC_BASE_URL = `${location.protocol}//${location.host}`;
   </script>
   <script src="/assets/js/scripts.js"></script>
-
-
-  <script src="/assets/js/logging.js" type="module"></script>
+  <script src="/assets/js/promo.js"></script>
 </head>
 
 <body>
@@ -46,7 +44,6 @@
   <main>
 
     <section id="promo-banner"><!-- This is filled in by promo.js --></section>
-    <script src="/assets/js/promo.js"></script>
 
     <section class="hero">
       <div class="illustration">
@@ -74,7 +71,7 @@
 
         <div class="product-card">
           <a href="/products/fast-sloth-sticker" class="mb-20">
-            <img src="/assets/img/fast-sloth-sticker.png" alt="Fast Sloth Sticker">
+            <img src="/assets/img/fast-sloth-sticker.png" alt="Fast Sloth Sticker" loading="lazy">
             <h2>Fast Sloth Sticker</h2>
             <p>
               Get your hands on this awesome Request Metrics sloth sticker, featuring our chill mascot riding a
@@ -185,7 +182,15 @@
 
 </html>
 
-<!-- Old Website -->
+<!--
+Unused HTML Content
+Fundamentals of Web Performance
+
+We need to get the size of the HTML up or everything is too fast to demonstrate.
+So here is a bunch of HTML from the "Old Website" that some careless developer
+just commented out instead of removing.
+-->
+
 <!-- <!DOCTYPE html>
 <html lang="en">
   <head>

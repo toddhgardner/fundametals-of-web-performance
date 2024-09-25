@@ -5,11 +5,14 @@ header {
 
   .container {
     height: 60px;
+    * {
+      max-height: 60px;
+    }
   }
 
   .site-logo {
     .site-icon {
-      flex: 0 0 60px;
+
       img {
         width: 100%;
         height: auto;
@@ -322,10 +325,10 @@ main.cart {
       height: 180px;
       gap: 20px;
       min-width: 0;
-      img {
+      /* img {
         height: 100%;
         width: auto;
-      }
+      } */
     }
     &:hover, &:active, &:focus {
       transform: none;
@@ -356,3 +359,17 @@ main.cart {
   }
 
 }
+
+
+/* #promo-banner {
+  height: 260px;
+} */
+/*
+#promo-banner {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+ */

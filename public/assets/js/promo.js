@@ -19,9 +19,9 @@ window.addEventListener("DOMContentLoaded", async () => {
   let innerHTML = "<div class='container'><div class='promo-list flex-column'>"
   products.forEach((product) => {
     innerHTML += `
-      <div class="product-card promo">
+      <div class="product-card ${product.isPromo ? 'promo' : ''}">
         <a href="/products/${product.slug}">
-          <img src="${STATIC_BASE_URL}${product.imagePath}?promo" alt="${product.name}" />
+          <img src="${STATIC_BASE_URL}${product.imagePath}?promo" alt="${product.name}" loading="lazy" />
           <div class="product-copy flex-column">
             <h2>Flash Sale!!</h2>
             <h3>${product.name}</h3>
