@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./index.js",
+    "bundle": "lightningcss --bundle ./public/assets/css/styles.css -o ./public/assets/css/styles.bundle.css --sourcemap",
     "deploy": "./tools/deploy.sh"
   },
   "repository": {
@@ -36,5 +37,8 @@
     "ignore": [
       "**/public/**"
     ]
+  },
+  "devDependencies": {
+    "lightningcss-cli": "^1.27.0"
   }
 }
