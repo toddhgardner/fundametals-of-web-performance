@@ -205,7 +205,7 @@ function renderCartCount(cart) {
 function updateAnalytics() {
   performance.mark("analytics_start");
   const phantomEl = document.createElement("div");
-  for (var i = 0; i <= 100_000; i++) {
+  for (var i = 0; i <= 200_000; i++) {
     let child = document.createElement("div");
     child.textContent = i;
     phantomEl.appendChild(child);
