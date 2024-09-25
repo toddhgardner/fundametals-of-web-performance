@@ -325,10 +325,10 @@ main.cart {
       height: 180px;
       gap: 20px;
       min-width: 0;
-      /* img {
+      img {
         height: 100%;
         width: auto;
-      } */
+      }
     }
     &:hover, &:active, &:focus {
       transform: none;
