@@ -45,7 +45,9 @@ app.use("/api", api);
 app.use(express.static(resolve(__dirname, "..", "public"), {
   extensions: ["html"],
   etag: performanceConfig.enable304CachingHeaders,
-  lastModified: performanceConfig.enable304CachingHeaders
+  lastModified: performanceConfig.enable304CachingHeaders,
+  cacheControl: performanceConfig.enableBrowserCache,
+  maxAge: performanceConfig.enableBrowserCache ? 7200000 : 0,
 }));
 
 module.exports = app;
