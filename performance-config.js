@@ -34,6 +34,6 @@ module.exports = {
    * The expected processing time in milliseconds of a "real" server under load
    * that has to talk to external systems.
    */
-  serverDuration: 500
+  serverDuration: 900
 
 };
