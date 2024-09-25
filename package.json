@@ -6,6 +6,9 @@
   "scripts": {
     "start": "nodemon ./index.js",
     "bundle": "lightningcss --bundle ./public/assets/css/styles.css -o ./public/assets/css/styles.bundle.css --sourcemap",
+    "imagePngResizer": "node ./tools/imagePngResizer.mjs",
+    "imagePngOptimize": "node ./tools/imagePngOptimize.mjs",
+    "imagePngToWebP": "node ./tools/imagePngToWebP.mjs",
     "deploy": "./tools/deploy.sh"
   },
   "repository": {
@@ -39,6 +42,11 @@
     ]
   },
   "devDependencies": {
+    "glob": "^11.0.0",
+    "imagemin": "^9.0.0",
+    "imagemin-pngquant": "^10.0.0",
+    "imagemin-webp": "^8.0.0",
+    "jimp": "^1.6.0",
     "lightningcss-cli": "^1.27.0"
   }
 }
