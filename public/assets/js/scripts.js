@@ -27,19 +27,29 @@ window.addEventListener("DOMContentLoaded", async () => {
     const el = evt.target;
     if (el.matches("button.add-to-cart")) {
       const productId = parseInt(el.getAttribute("data-product-id"), 10);
+      updateAnalytics();
+      await addToCart(user, productId);
 
       /**
-       * Performance Improvement TODO
-       * Inform the user that an action
+       * TODO Performance Opportunity
+       *
+       * We do a lot of expensive work on the main thread in this handler, and
+       * we don't provide much user feedback. This makes interactivity feel
+       * sluggish.
        */
-      // el.textContent = "Added!";
-      // el.setAttribute("disabled", "disabled");
+      // const productId = parseInt(el.getAttribute("data-product-id"), 10);
+      // requestAnimationFrame(() => {
+      //   el.textContent = "Added!";
+      //   el.setAttribute("disabled", "disabled");
+      // });
+      // setTimeout(() => {
+      //   updateAnalytics();
+      // });
+      // await addToCart(user, productId);
       // setTimeout(() => {
       //   el.textContent = "Add to Cart";
       //   el.removeAttribute("disabled");
       // }, 1500);
-
-      await addToCart(user, productId);
     }
     else if (el.matches("button.remove-from-cart")) {
       const cartItemId = el.getAttribute("data-cart-item-id");
@@ -186,6 +196,22 @@ function renderCartContents(cart, products) {
  */
 function renderCartCount(cart) {
   document.getElementById('cart-count').textContent = cart.length;
+}
+
+/**
+ * updateAnalytics
+ * Dummy function that simulates doing a lot of expensive work.
+ */
+function updateAnalytics() {
+  performance.mark("analytics_start");
+  const phantomEl = document.createElement("div");
+  for (var i = 0; i <= 100_000; i++) {
+    let child = document.createElement("div");
+    child.textContent = i;
+    phantomEl.appendChild(child);
+  }
+  performance.mark("analytics_end");
+  performance.measure("analytics", "analytics_start", "analytics_end")
 }
 
 /**

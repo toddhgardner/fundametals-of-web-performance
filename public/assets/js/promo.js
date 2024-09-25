@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   let innerHTML = "<div class='container'><div class='promo-list flex-column'>"
   products.forEach((product) => {
     innerHTML += `
-      <div class="product-card ${product.isPromo ? 'promo' : ''}">
+      <div class="product-card promo">
         <a href="/products/${product.slug}">
           <img src="${STATIC_BASE_URL}${product.imagePath}?promo" alt="${product.name}" />
           <div class="product-copy flex-column">
@@ -39,7 +39,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   // expand the promoted product
   setTimeout(() => {
     el.querySelector(".product-card.promo").classList.add("expand");
-  }, 100);
+  }, 2000);
 
 
 });

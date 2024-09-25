@@ -77,7 +77,6 @@ apiRouter.post("/users/:userId/cart", jsonParser, async (req, res, next) => {
   next();
 });
 apiRouter.delete("/users/:userId/cart", async (req, res, next) => {
-  console.log("here");
   const { userId } = req.params;
   await cartQuery.deleteAll({ userId });
   res.status(200);
