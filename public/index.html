@@ -20,10 +20,6 @@
     href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
 
-  <link rel="preload" as="image" href="/assets/img/hero-desktop.png">
-  <link rel="preload" as="image" href="/assets/img/hero-mobile.png">
-
-
   <link rel="stylesheet" href="/assets/css/styles.bundle.css">
   <script>
     const API_BASE_URL = `${location.protocol}//${location.host}`;
@@ -38,7 +34,7 @@
     <div class="container flex-row align-center space-between">
       <a href="/" class="site-logo flex align-center flex-gap-10">
         <div class="site-icon">
-          <img loading="lazy" src="/assets/img/devstickers-logo.png" alt="Developer Stickers Online" />
+          <img loading="lazy" src="/assets/img/webp/devstickers-logo.webp" alt="Developer Stickers Online" />
         </div>
         <h1 class="flex-column">
           <span>Developer Stickers</span>
@@ -56,10 +52,18 @@
     <section id="promo-banner"><!-- This is filled in by promo.js --></section>
 
     <section class="hero">
-      <div class="illustration">
-        <img class="desktop" src="/assets/img/hero-desktop.png" alt="Developer Stickers" fetchpriority="high" />
-        <img class="mobile" src="/assets/img/hero-mobile.png" alt="Developer Stickers" fetchpriority="high" />
-      </div>
+
+      <picture class="illustration">
+        <source media="(max-width: 720px)" srcset="/assets/img/webp/hero-mobile-360.webp 360w,
+          /assets/img/webp/hero-mobile-720.webp 720w,
+          /assets/img/webp/hero-mobile-1400.webp 1400w" />
+        <source media="(min-width: 721px)" srcset="/assets/img/webp/hero-desktop-720.webp 720w,
+          /assets/img/webp/hero-desktop-1400.webp 1400w,
+          /assets/img/webp/hero-desktop-2800.webp 2800w">
+        <img src="/assets/img/webp/hero-desktop-2800.webp" alt="Developer Stickers Online" fetchpriority="high"
+          height="1200" width="2800" />
+      </picture>
+
       <!-- NOTE: As of Chrome 129, we can trick it by hiding the LCP element behind a transparent element -->
       <!-- <div class="overlay"></div> -->
       <div class="hero-content">
@@ -81,7 +85,7 @@
 
         <div class="product-card">
           <a href="/products/fast-sloth-sticker" class="mb-20">
-            <img loading="lazy" src="/assets/img/fast-sloth-sticker.png" alt="Fast Sloth Sticker" loading="lazy">
+            <img loading="lazy" src="/assets/img/webp/fast-sloth-sticker.webp" alt="Fast Sloth Sticker" loading="lazy">
             <h2>Fast Sloth Sticker</h2>
             <p>
               Get your hands on this awesome Request Metrics sloth sticker, featuring our chill mascot riding a
@@ -93,7 +97,7 @@
 
         <div class="product-card">
           <a href="/products/good-day-to-debug-sticker" class="mb-20">
-            <img loading="lazy" src="/assets/img/good-day-to-debug-sticker.png" alt="Good Day to Debug Sticker">
+            <img loading="lazy" src="/assets/img/webp/good-day-to-debug-sticker.webp" alt="Good Day to Debug Sticker">
             <h2>Good Day to Debug Sticker</h2>
             <p>
               Channel your inner warrior with this epic Request Metrics sticker. Debug with honor.
@@ -104,7 +108,7 @@
 
         <div class="product-card">
           <a href="/products/js-happens-sticker" class="mb-20">
-            <img loading="lazy" src="/assets/img/js-happens-sticker.png" alt="JavaScript Happens">
+            <img loading="lazy" src="/assets/img/webp/js-happens-sticker.webp" alt="JavaScript Happens">
             <h2>JavaScript Happens</h2>
             <p>
               Embrace the inevitable. You can't stop it. JavaScript will happen.
@@ -115,7 +119,7 @@
 
         <div class="product-card">
           <a href="/products/yo-dawg-sticker" class="mb-20">
-            <img loading="lazy" src="/assets/img/yo-dawg-sticker.png" alt="Yo Dawg Sticker">
+            <img loading="lazy" src="/assets/img/webp/yo-dawg-sticker.webp" alt="Yo Dawg Sticker">
             <h2>Yo Dawg Sticker</h2>
             <p>
               Develop JavaScript like Xzibit. You always need more JavaScript.
@@ -130,7 +134,7 @@
     <section class="callouts container">
       <div class="callout">
         <picture>
-          <img loading="lazy" src="/assets/img/callout-1.png" alt="Express Your Developer Personality">
+          <img loading="lazy" src="/assets/img/webp/callout-1.webp" alt="Express Your Developer Personality">
         </picture>
         <div class="callout-text">
           <h2>Express Your Developer Personality</h2>
@@ -143,7 +147,7 @@
       </div>
       <div class="callout">
         <picture>
-          <img loading="lazy" src="/assets/img/callout-2.png" alt="High-Quality Stickers Built to Last">
+          <img loading="lazy" src="/assets/img/webp/callout-2.webp" alt="High-Quality Stickers Built to Last">
         </picture>
         <div class="callout-text">
           <h2>High-Quality Stickers Built to Last</h2>
@@ -157,7 +161,7 @@
       </div>
       <div class="callout">
         <picture>
-          <img loading="lazy" src="/assets/img/callout-3.png" alt="Perfect for Gifting">
+          <img loading="lazy" src="/assets/img/webp/callout-3.webp" alt="Perfect for Gifting">
         </picture>
         <div class="callout-text">
           <h2>Perfect for Gifting</h2>
