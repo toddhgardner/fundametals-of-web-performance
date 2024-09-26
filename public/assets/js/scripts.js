@@ -27,8 +27,20 @@ window.addEventListener("DOMContentLoaded", async () => {
     const el = evt.target;
     if (el.matches("button.add-to-cart")) {
       const productId = parseInt(el.getAttribute("data-product-id"), 10);
-      updateAnalytics();
-      await addToCart(user, productId);
+      requestAnimationFrame(async () => {
+        el.textContent = "Added!";
+        el.setAttribute("disabled", "disabled");
+        setTimeout(() => {
+          updateAnalytics();
+        }, 0);
+        await addToCart(user, productId);
+        setTimeout(() => {
+          el.textContent = "Add to Cart";
+          el.removeAttribute("disabled");
+        }, 1500);
+      })
+
+
 
       /**
        * TODO Performance Opportunity
