@@ -678,4 +678,12 @@ main.cart {
   }
 }
 
+#promo-banner {
+  z-index: 1;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+}
+
 /*# sourceMappingURL=./public/assets/css/styles.bundle.css.map */

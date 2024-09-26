@@ -21,7 +21,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     innerHTML += `
       <div class="product-card ${product.isPromo ? 'promo' : ''}">
         <a href="/products/${product.slug}">
-          <img loading="lazy" src="${STATIC_BASE_URL}${product.imagePath}?promo" alt="${product.name}" ${product.isPromo ? 'onload="showPromo()"' : ''} />
+          <img loading="lazy" width="1024" height="1024" src="${STATIC_BASE_URL}${product.imagePath}?promo" alt="${product.name}" ${product.isPromo ? 'onload="showPromo()"' : ''} />
           <div class="product-copy flex-column">
             <h2>Flash Sale!!</h2>
             <h3>${product.name}</h3>

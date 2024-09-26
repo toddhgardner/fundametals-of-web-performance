@@ -28,14 +28,14 @@ module.exports = {
    * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag
    * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Last-Modified
    */
-  enable304CachingHeaders: false,
+  enable304CachingHeaders: true,
 
   /**
    * Whether to send the Browser Caching Headers `Cache-Control` and `Expires`
    * headers to maintaining the in-browser cache.
    * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control
    */
-  enableBrowserCache: false,
+  enableBrowserCache: true,
 
   /**
    * The expected processing time in milliseconds of a "real" server under load
