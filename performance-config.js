@@ -13,14 +13,14 @@ module.exports = {
    * the requesting browser.
    * @see https://developer.mozilla.org/en-US/docs/Glossary/gzip_compression
    */
-  enableGzipCompression: false,
+  enableGzipCompression: true,
 
   /**
    * Whether to use the Brotli Compression on response bodies, when supported
    * by the requesting browser.
    * @see https://developer.mozilla.org/en-US/docs/Glossary/Brotli_compression
    */
-  enableBrotliCompression: false,
+  enableBrotliCompression: true,
 
   /**
    * Whether to send the 304 Caching Headers `ETag` and `Last-Modified` for
