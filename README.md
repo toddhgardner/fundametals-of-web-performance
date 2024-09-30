@@ -31,3 +31,7 @@ In this one-day training, you'll learn how to make your website *fast*, and keep
 
 ### Summary
 Build faster websites and web applications by learning the current metrics and techniques for improving web performance. We’ll look at the psychology of web performance and how users see wait time on your site. Then learn about the new Core Web Vitals that Google uses to measure your page, like Largest Contentful Paint (LCP), Cumulative Layout Shift (CLS), and Interation to Next Paint (INP). Finally, we’ll discuss building a performance culture in your organization to start your applications fast from the beginning!
+
+### Course Slides
+- [Part 1](https://static.frontendmasters.com/resources/2024-09-26-web-perf-v2/web-perf-v2-slides_part1.pdf)
+- [Part 2](https://static.frontendmasters.com/resources/2024-09-26-web-perf-v2/web-perf-v2-slides_part2.pdf)
